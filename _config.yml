@@ -8,6 +8,7 @@ keyword: "LAPACK, LAPACKE, Linux, Algorithms"
 url: "https://liukebupt.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/liukebupt/liukebupt.github.io.git" # you code repository
+github_username: "liukebupt"
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
