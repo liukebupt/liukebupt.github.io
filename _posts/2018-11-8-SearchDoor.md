@@ -51,11 +51,18 @@ while not find door:
 ```
 
 ## Q2
+First, calculate some values after $$k^{th}$$ iteration.
+### Approach 1
+1. $$a_k$$  
+`a` doubles twice after each iteration, so that $$a_k=4^k$$.  
+2. $$T_k$$  
+$$T_k$$ is the steps we move after kth iteration. For each iteration, we move left $$a_{k-1}$$ steps and then move right $$2a_{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}3a_{k-1}=\sum^k_{i=1}\frac{3}{4}4^k=\frac{3}{4}\dot4\dot\frac{4^k-1}{4-1}=4^k-1$$.  
+
 After kth iteration  
 
-|          |n         |          |          |
-| :------: | :------: | :------: | :------: |
-|approach 1|$$4^k-1$$ |          |          |
-|approach 2|          |          |          |
-|approach 3|          |          |          |
+|          |n         |current position|furthest checked position left|furthest checked position right|
+| :------: | :------: | :------: | :------: | :------: |
+|approach 1|$$4^k-1$$ |$$4^k-1$$|          |          |
+|approach 2|          |          |          |          |
+|approach 3|          |          |          |          |
 
