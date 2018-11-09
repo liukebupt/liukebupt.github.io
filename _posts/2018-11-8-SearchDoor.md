@@ -19,14 +19,42 @@ Imagine that you are facing a high wall that stretches infinitely in both direct
 3. Observe that if you knew $$n$$, you could trivially solve the problem in $$3n$$ steps in the worst case (since you do not know the direction of the door); an interesting question (beyond the scope of this problem) is: what the minimum constant $$c>3$$ that can be achieved by a linear-time algorithm (in the worst case)?
 
 ## Q1  
-We have two approaches for this problem.  
+We have three approaches for this problem.  
 
 1. 
 ```
-initialize a to some number m
+a=1
 while not find door:
      walk left a steps
      a*=2
      walk right a steps
      a*=2
 ```
+
+2. 
+```
+a=1
+while not find door:
+     walk left to positoin a
+     a*=2
+     walk right to positoin a
+     a*=2
+```
+
+3. 
+```
+a=1
+while not find door:
+     walk left to positoin a
+     walk right to positoin a
+     a*=2
+```
+
+## Q2
+After kth iteration
+|          |n         |          |          |
+| :------: | :------: | :------: | :------: |
+|approach 1|$$4^k-1$$ |          |          |
+|approach 2|          |          |          |
+|approach 3|          |          |          |
+
