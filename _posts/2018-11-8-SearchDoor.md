@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Search Door Problem
+title:      Door Searching Problem
 subtitle:   
 date:       2018-11-8
 author:     Ke Liu
