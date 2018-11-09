@@ -51,7 +51,7 @@ while not find door:
 ```
 
 ## Q2
-After kth iteration
+After kth iteration  
 |          |n         |          |          |
 | :------: | :------: | :------: | :------: |
 |approach 1|$$4^k-1$$ |          |          |
