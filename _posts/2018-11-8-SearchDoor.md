@@ -7,7 +7,7 @@ author:     Ke Liu
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
 tags:
-    - Algorithm
+    - Algorithms
 ---
 
 Imagine that you are facing a high wall that stretches infinitely in both directions. There is a door in the wall, but you don't know how far away is the door or in which direction. It is pitch dark, but you have a very dim lighted candle that will enable you to see the door when you are right next to it.   
