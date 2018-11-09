@@ -51,8 +51,8 @@ while not find door:
 ```
 
 ## Q2
-First, calculate some values after $$k^{th}$$ iteration.
 ### Approach 1
+First, calculate some values after $$k^{th}$$ iteration.  
 1. $$a_k$$  
 `a` doubles twice after each iteration, so that $$a_k=4^k$$.  
 2. $$T_k$$  
@@ -60,9 +60,13 @@ $$T_k$$ is the steps we move after $$k^{th}$$ iteration. For each iteration, we 
 3. $$p_k$$  
 $$p_k$$ is the current position after $$k^{th}$$ iteration. We assume that the left side of the starting point is negative, and right side is positive. Similarly to $$T_k$$, $$p_k=\sum^k_{i=1}a_{k-1}=\frac{1}{3}T_k=\frac{4^k-1}{3}$$.
 4. $$L_k$$
-$$L_k$$ is the furthest checked position checked on the left after $$k^{th}$$ iteration. Notice that, we can see the positions next to us using the candle. $$L_k=p_{k-1}-a_{k-1}-1=\frac{1}{3}(4^{k-1}-1)-4^{k-1}-1=-\frac{2}{3}(4^{k-1}+2)$$.
+$$L_k$$ is the furthest checked position checked on the left after $$k^{th}$$ iteration. Notice that, we can see the positions next to us using the candle. $$L_k=p_{k-1}-a_{k-1}-1=\frac{1}{3}(4^{k-1}-1)-4^{k-1}-1=-\frac{2}{3}\cdot4^{k-1}-\frac{4}{3}$$.
 5. $$R_k$$
-Similarly to $$L_k$$, $$R_k$$ is the furthest checked on the right after $$k^{th}$$ iteration. $$R_k=p_{k-1}+a_{k-1}+1=\frac{4}{3}(4^{k-1}+\frac{1}{2})$$.
+Similarly to $$L_k$$, $$R_k$$ is the furthest checked on the right after $$k^{th}$$ iteration. $$R_k=p_{k-1}+a_{k-1}+1=\frac{1}{3}(4^{k-1}-1)+4^{k-1}+1=\frac{4}{3}\cdot4^{k-1}+\frac{2}{3}$$.  
+
+Therefore, we know that if the door is found in the $$(k+1)^{th}$$ iteration, it's either $$-\frac{2}{3}\cdot4^{k-1}-\frac{4}{3}>n\geq-\frac{2}{3}\cdot4^k-\frac{4}{3}$$ or $$\frac{4}{3}\cdot4^{k-1}+\frac{2}{3}<n\leq\frac{4}{3}\cdot4^k+\frac{2}{3}$$.  
+
+
 
 After kth iteration  
 
