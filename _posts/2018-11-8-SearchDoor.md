@@ -56,7 +56,7 @@ First, we calculate some values after $$k^{th}$$ iteration.
 1. $$a_k$$  
 $$a_k$$ is the value of `a` after $$k^{th}$$ iteration. Since `a` doubles twice after each iteration, $$a_k=4^k$$.  
 2. $$T_k$$  
-$$T_k$$ is the steps we move after $$k^{th}$$ iteration. For each iteration, we move left $$a_{k-1}$$ steps and then move right $$2a_{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}3a_{k-1}=\sum^k_{i=1}\frac{3}{4}\cdot4^k=\frac{3}{4}\cdot4\cdot\frac{4^k-1}{4-1}=4^k-1$$.  
+$$T_k$$ is the total steps we move after $$k^{th}$$ iteration. For each iteration, we move left $$a_{k-1}$$ steps and then move right $$2a_{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}3a_{k-1}=\sum^k_{i=1}\frac{3}{4}\cdot4^k=\frac{3}{4}\cdot4\cdot\frac{4^k-1}{4-1}=4^k-1$$.  
 3. $$p_k$$  
 $$p_k$$ is the current position after $$k^{th}$$ iteration. We assume that the left side of the starting point is negative, and right side is positive. Similarly to $$T_k$$, $$p_k=\sum^k_{i=1}a_{k-1}=\frac{1}{3}T_k=\frac{4^k-1}{3}$$.
 4. $$L_k$$  
@@ -70,13 +70,14 @@ Due to the defination of $$n$$, the position of the door is either $$n+1$$ or $$
 Similarly, we calculate some values after $$k^{th}$$ iteration.  
 1. $$a_k$$  
 Similarly, $$a_k=4^k$$.  
-2. $$p_k$$  
+2. $$L_k$$ $$R_k$$   
+Obviously, $$L_k=-a_{k-1}-1=-4^{k-1}-1$$, $$R_k=2a_{k-1}+1=2\cdot4^{k-1}+1$$.
+3. $$p_k$$  
 Obviously, $$p_k=\frac{1}{2}a_k=\frac{1}{2}\cdot4^k$$.  
-3. $$T_k$$  
-For each iteration, we move left $$a_{k-1}$$ steps and then move right $$2a_{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}3a_{k-1}=\sum^k_{i=1}\frac{3}{4}\cdot4^k=\frac{3}{4}\cdot4\cdot\frac{4^k-1}{4-1}=4^k-1$$.  
+4. $$T_k$$ 
+For each iteration, we move left $$p_{k-1}+4^{k-1}=$\frac{1}{2}\cdot4^{k-1}+4^{k-1}=\frac{3}{2}\cdot4^{k-1}$ steps and then move right $$p_k+4^{k-1}=2\cdot4^{k-1}+4^{k-1}=3\cdot4^{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}\frac{9}{2}\cdot4^{k-1}-\frac{1}{2}=\frac{9}{8}\sum^k_{i=1}4^k-\frac{1}{2}=\frac{9}{8}\cdot4\cdot\frac{4^k-1}{4-1}-\frac{1}{2}=\frac{3}{2}(4^k-1)-\frac{1}{2}$$.  
 
-4. $$L_k$$  
-$$L_k$$ is the furthest checked position checked on the left after $$k^{th}$$ iteration. Notice that, we can see the positions next to us using the candle. $$L_k=p_{k-1}-a_{k-1}-1=\frac{1}{3}(4^{k-1}-1)-4^{k-1}-1=-\frac{2}{3}\cdot4^{k-1}-\frac{4}{3}$$.
+
 5. $$R_k$$  
 Similarly to $$L_k$$, $$R_k$$ is the furthest checked on the right after $$k^{th}$$ iteration. $$R_k=p_{k}+1=\frac{1}{3}\cdot4^k+\frac{2}{3}$$.  
 
