@@ -75,11 +75,7 @@ Obviously, $$L_k=-a_{k-1}-1=-4^{k-1}-1$$, $$R_k=2a_{k-1}+1=2\cdot4^{k-1}+1$$.
 3. $$p_k$$  
 Obviously, $$p_k=\frac{1}{2}a_k=\frac{1}{2}\cdot4^k$$.  
 4. $$T_k$$ 
-For each iteration, we move left $$p_{k-1}+4^{k-1}=$\frac{1}{2}\cdot4^{k-1}+4^{k-1}=\frac{3}{2}\cdot4^{k-1}$ steps and then move right $$p_k+4^{k-1}=2\cdot4^{k-1}+4^{k-1}=3\cdot4^{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}\frac{9}{2}\cdot4^{k-1}-\frac{1}{2}=\frac{9}{8}\sum^k_{i=1}4^k-\frac{1}{2}=\frac{9}{8}\cdot4\cdot\frac{4^k-1}{4-1}-\frac{1}{2}=\frac{3}{2}(4^k-1)-\frac{1}{2}$$.  
-
-
-5. $$R_k$$  
-Similarly to $$L_k$$, $$R_k$$ is the furthest checked on the right after $$k^{th}$$ iteration. $$R_k=p_{k}+1=\frac{1}{3}\cdot4^k+\frac{2}{3}$$.  
+For each iteration, we move left $$p_{k-1}+4^{k-1}=$\frac{1}{2}\cdot4^{k-1}+4^{k-1}=\frac{3}{2}\cdot4^{k-1}$$ steps and then move right $$p_k+4^{k-1}=2\cdot4^{k-1}+4^{k-1}=3\cdot4^{k-1}$$ steps. So that $$T_k=\sum^k_{i=1}\frac{9}{2}\cdot4^{k-1}-\frac{1}{2}=\frac{9}{8}\sum^k_{i=1}4^k-\frac{1}{2}=\frac{9}{8}\cdot4\cdot\frac{4^k-1}{4-1}-\frac{1}{2}=\frac{3}{2}(4^k-1)-\frac{1}{2}$$.  
 
 Due to the defination of $$n$$, the position of the door is either $$n+1$$ or $$-n-1$$. Therefore, we know that if the door is found in the $$(k+1)^{th}$$ iteration, it's either $$L_k>-n-1\geq L_{k+1}$$ or $$R_k<n+1\leq R_{k+1}$$. We can prove that, in the worse case, the door is to the left of the starting point and $$n=-L_k=\frac{2}{3}\cdot4^{k-1}+\frac{4}{3}$$, which means $$4^k=6n-8$$. In this case, $$T(n)=T_k+p_k+n=4^k-1+\frac{4^k-1}{3}+n=\frac{4}{3}(6n-9)+n=9n-12$$. The constant multiple is $$9$$.
 
